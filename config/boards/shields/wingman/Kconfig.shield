@@ -1,0 +1,5 @@
+config SHIELD_WINGMAN_LEFT
+    def_bool $(shields_list_contains,wingman_left)
+
+config SHIELD_WINGMAN_RIGHT
+    def_bool $(shields_list_contains,wingman_right)
