@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    chosen = {
+    chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
     };
@@ -15,7 +15,7 @@
         #size-cells = <0>;
     };
 
-    kscan0 = {
+    kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         row-gpios = <&gpio0 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -30,7 +30,7 @@
     //        | NONE | <    |  A  |  S  |  D  |  F  |  G  |             |  H  |  J   |  K  |  L  |  Ñ  |  ´  |  Ç  |
     //               | SHFT |  Z  |  X  |  C  |  V  |  B  |             |  N  |  M   |  ,  |  .  |  -  |  \  |
     //                      | CTRL| LWR | GUI | ENT | ALT |             | ALT | SPC  | CTRL| HOME| END |
-    default_transform = {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         rows = <5>;
         cols = <16>;
