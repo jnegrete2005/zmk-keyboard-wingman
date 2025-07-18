@@ -21,7 +21,7 @@
 //        | NONE | <    |  A  |  S  |  D  |  F  |  G  |             |  H  |  J   |  K  |  L  |  Ñ  |  ´  |  Ç  |
 //               | SHFT |  Z  |  X  |  C  |  V  |  B  |             |  N  |  M   |  ,  |  .  |  -  |  \  |
 //                      | CTRL| LWR | GUI | ENT | ALT |             | ALT | SPC  | CTRL| HOME| END |
-                                                bindings = <
+                        bindings = <
 &kp CAPS           &kp DEL   &kp ESC   &kp ES_N1   &kp ES_N2   &kp ES_N3   &kp ES_N4   &kp ES_N5         &kp ES_N6   &kp ES_N7   &kp ES_N8      &kp ES_N9    &kp ES_N0      &kp ES_SQT    &kp ES_IEXCL    &kp BSPC
 &kp PRINTSCREEN    &none     &kp TAB   &kp ES_Q    &kp ES_W    &kp ES_E    &kp ES_R    &kp ES_T          &kp ES_Y    &kp ES_U    &kp ES_I       &kp ES_O     &kp ES_P       &kp ES_GRAVE  &kp ES_PLUS     &kp RET
                    &none     &kp ES_LT &kp ES_A    &kp ES_S    &kp ES_D    &kp ES_F    &kp ES_G          &kp ES_H    &kp ES_J    &kp ES_K       &kp ES_L     &kp ES_N_TILDE &kp ES_ACUTE  &kp ES_C_CEDILLA
@@ -36,13 +36,12 @@
 //      |      | RGBT | BL+  | BL-  |     |     |     |             | LEFT|DOWN |RIGHT|     |     |     |     |
 //             |      |      |      |     |     |     |             |     |     |     |     |     |     |
 //                    |      |      |     |     |     |             |     |     |     |     |     |
-                                                bindings = <
+                        bindings = <
    &none      &none      &kp F1        &kp F2            &kp F3          &kp F4            &kp F5        &kp F6           &kp F7    &kp F8    &kp F9     &kp F10   &kp F11   &kp F12   &none   &none
    &none      &none      &kp C_MUTE    &kp C_VOL_DOWN    &kp C_VOL_UP    &kp C_BRI_DOWN    &kp C_BRI_UP  &none            &none     &kp UP    &none      &none     &none     &none     &none   &none
                          &bl BL_TOG    &bl BL_INC        &bl BL_DEC      &none             &none         &none            &kp LEFT  &kp DOWN  &kp RIGHT  &none     &none     &none     &none
                                        &none             &none           &none             &none         &none            &none     &none     &none      &none     &none     &none
                                                          &none           &none             &none         &none            &none     &none     &none      &none    &none
-                                                >;
                         >;
                 };
         };
