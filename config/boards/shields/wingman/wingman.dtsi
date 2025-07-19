@@ -1,56 +1,51 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/led/led.h>
+
+&pinctrl {
+    spi3_default: spi3_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>;
+        };
+    };
+
+    spi3_sleep: spi3_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+
+    pinctrl-0 = <&spi3_default>;
+    pinctrl-1 = <&spi3_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <10>; /* number of LEDs */
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
 
 / {
     chosen {
         zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
-        zmk,backlight = &backlight;
-    };
-
-    backlight: backlight0 {
-        compatible = "zmk,led-sk6812";
-        pin = <&gpio0 20 GPIO_ACTIVE_HIGH>;
-        compatible = "zmk,ws2812";
-        gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
-        label = "backlight";
-        chain-length = <34>;
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        led@0 { reg = <0>; };
-        led@1 { reg = <1>; };
-        led@2 { reg = <2>; };
-        led@3 { reg = <3>; };
-        led@4 { reg = <4>; };
-        led@5 { reg = <5>; };
-        led@6 { reg = <6>; };
-        led@7 { reg = <7>; };
-        led@8 { reg = <8>; };
-        led@9 { reg = <9>; };
-        led@10 { reg = <10>; };
-        led@11 { reg = <11>; };
-        led@12 { reg = <12>; };
-        led@13 { reg = <13>; };
-        led@14 { reg = <14>; };
-        led@15 { reg = <15>; };
-        led@16 { reg = <16>; };
-        led@17 { reg = <17>; };
-        led@18 { reg = <18>; };
-        led@19 { reg = <19>; };
-        led@20 { reg = <20>; };
-        led@21 { reg = <21>; };
-        led@22 { reg = <22>; };
-        led@23 { reg = <23>; };
-        led@24 { reg = <24>; };
-        led@25 { reg = <25>; };
-        led@26 { reg = <26>; };
-        led@27 { reg = <27>; };
-        led@28 { reg = <28>; };
-        led@29 { reg = <29>; };
-        led@30 { reg = <30>; };
-        led@31 { reg = <31>; };
-        led@32 { reg = <32>; };
-        led@33 { reg = <33>; };
+        zmk,underglow = &led_strip;
     };
 
     default_transform: keymap_transform_0 {
