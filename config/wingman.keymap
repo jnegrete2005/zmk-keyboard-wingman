@@ -26,7 +26,7 @@
 &kp PRINTSCREEN    &none        &kp TAB   &kp ES_Q    &kp ES_W    &kp ES_E    &kp ES_R    &kp ES_T          &kp ES_Y    &kp ES_U    &kp ES_I       &kp ES_O     &kp ES_P       &kp ES_GRAVE  &kp ES_PLUS     &kp DEL
                    &none        &kp ES_LT &kp ES_A    &kp ES_S    &kp ES_D    &kp ES_F    &kp ES_G          &kp ES_H    &kp ES_J    &kp ES_K       &kp ES_L     &kp ES_N_TILDE &kp ES_ACUTE  &kp ES_C_CEDILLA
                                 &kp LSHFT &kp ES_Z    &kp ES_X    &kp ES_C    &kp ES_V    &kp ES_B          &kp ES_N    &kp ES_M    &kp ES_COMMA   &kp ES_DOT   &kp ES_MINUS   &kp ES_BSLH
-                                          &kp LCTRL   &lt(1, &mo 1)     &kp LGUI    &kp RET     &kp LALT          &kp RALT    &kp SPACE   &kp RCTRL      &kp HOME     &kp END
+                                          &kp LCTRL   &tog 1      &kp LGUI    &kp RET     &kp LALT          &kp RALT    &kp SPACE   &kp RCTRL      &kp HOME     &kp END
                         >;
                 };
                 lower_layer {
